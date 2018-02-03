@@ -16,10 +16,30 @@ autovalidate
 
 This will recursively scan your project and identify any files that are invalid according to their expected format. For example, if a file has the extension .json but its content is not well-formed JSON, an error will be raised.
 
-## Supported formats
+### Supported formats
 
 - json
 - yaml
+
+### Options
+
+```
+-r, --reporter=<dot,list>
+```
+
+How validation results should be reported.
+
+The dot reporter prints a `'.'` character for ever file successfully validated, and an `'F'` for files that are invalid.
+
+The list reporter prints the full path of every file validated, with a green checkmark for valid files and a red X for invalid files.
+
+```
+-x, --exclude=<patterns>
+```
+
+Any patterns that should be excluded from validation.
+
+For example, specify `'node_modules/*'` to not validate any data files belonging to your installed npm dependencies.
 
 ## Why would I use this?
 

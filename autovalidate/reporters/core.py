@@ -30,10 +30,13 @@ class Reporter(object):
 
     def summarize(self):
         for result in self.invalid_results:
-            self.out.write('\n%s:\n%s\n' % (result.path,
-                                            indent(result.message)))
-        self.out.write('\n%d valid, %d invalid\n' % (self.valid_count,
-                                                     self.invalid_count))
+            self.write('\n%s:\n%s\n' % (result.path, indent(result.message)))
+        self.write('\n%d valid, %d invalid\n' % (self.valid_count,
+                                                 self.invalid_count))
+
+    def write(self, message):
+        self.out.write(message)
+        self.out.flush()
 
 reporter_classes = {}
 

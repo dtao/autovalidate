@@ -19,4 +19,4 @@ def run(directory, reporter):
 
     reporter.summarize()
 
-    return reporter.exit_code
+    return reporter.invalid_count == 0

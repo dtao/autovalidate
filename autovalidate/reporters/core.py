@@ -17,10 +17,6 @@ class Reporter(object):
     def invalid_count(self):
         return len(self.invalid_results)
 
-    @property
-    def exit_code(self):
-        return 0 if self.invalid_count == 0 else 1
-
     def record(self, result):
         if result.valid:
             self.valid_results.append(result)

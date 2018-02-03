@@ -15,4 +15,6 @@ opts, args = opt_parser.parse_args()
 
 reporter = get_reporter(name=opts.reporter, out=sys.stdout)
 
-sys.exit(run(os.getcwd(), reporter))
+success = run(os.getcwd(), reporter)
+
+sys.exit(0 if success else 1)

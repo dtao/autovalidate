@@ -1,7 +1,7 @@
 from setuptools import setup
 
 setup(name='autovalidate',
-      version='0.2.0',
+      version='0.2.1',
       author='Dan Tao',
       author_email='daniel.tao@gmail.com',
       packages=['autovalidate',

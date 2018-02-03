@@ -1,5 +1,7 @@
 from autovalidate.validators.core import (ValidationResult, get_validator,
                                           validates)
-from autovalidate.validators import json_ as json, yaml_ as yaml
+from autovalidate.validators.json_ import JsonValidator
+from autovalidate.validators.yaml_ import YamlValidator
 
-__all__ = ['ValidationResult', 'get_validator', 'json', 'validates', 'yaml']
+__all__ = ['JsonValidator', 'ValidationResult', 'YamlValidator',
+           'get_validator', 'validates']

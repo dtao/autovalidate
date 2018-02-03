@@ -1,4 +1,6 @@
-from autovalidate.reporters.core import Reporter, get_reporter
-from autovalidate.reporters import dot, list_ as list
+from autovalidate.reporters.core import Reporter, get_reporter, reporter
+from autovalidate.reporters.dot import DotReporter
+from autovalidate.reporters.list_ import ListReporter
 
-__all__ = ['Reporter', 'get_reporter', 'dot', 'list']
+__all__ = ['DotReporter', 'ListReporter', 'Reporter', 'get_reporter',
+           'reporter']

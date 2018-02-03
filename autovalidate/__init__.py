@@ -3,7 +3,7 @@ import os
 from autovalidate.validators import get_validator
 
 
-def autovalidate(directory):
+def find_and_validate(directory):
     for root, dirs, files in os.walk(directory):
         for filename in files:
             basename, ext = os.path.splitext(filename)
@@ -13,8 +13,8 @@ def autovalidate(directory):
             yield validator.validate(os.path.join(root, filename))
 
 
-def run(directory, reporter):
-    for result in autovalidate(directory):
+def autovalidate(directory, reporter):
+    for result in find_and_validate(directory):
         reporter.record(result)
 
     reporter.summarize()

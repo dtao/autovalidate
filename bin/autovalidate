@@ -5,7 +5,7 @@ import sys
 
 from optparse import OptionParser
 
-from autovalidate import autovalidate
+from autovalidate import run
 from autovalidate.reporters import get_reporter
 
 opt_parser = OptionParser()
@@ -15,9 +15,4 @@ opts, args = opt_parser.parse_args()
 
 reporter = get_reporter(name=opts.reporter, out=sys.stdout)
 
-for result in autovalidate(os.getcwd()):
-    reporter.record(result)
-
-reporter.summarize()
-
-sys.exit(reporter.exit_code)
+sys.exit(run(os.getcwd(), reporter))

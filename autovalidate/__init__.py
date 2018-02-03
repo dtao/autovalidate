@@ -11,3 +11,12 @@ def autovalidate(directory):
             if validator is None:
                 continue
             yield validator.validate(os.path.join(root, filename))
+
+
+def run(directory, reporter):
+    for result in autovalidate(directory):
+        reporter.record(result)
+
+    reporter.summarize()
+
+    return reporter.exit_code
